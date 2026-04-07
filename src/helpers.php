@@ -22,7 +22,7 @@ if (!function_exists('ffmpeg')) {
      * @param FFProbe|null $probe
      * @return FFMpeg
      */
-    function ffmpeg(array $config = [], LoggerInterface $logger = null, FFProbe $probe = null): FFMpeg
+    function ffmpeg(array $config = [], ?LoggerInterface $logger = null, ?FFProbe $probe = null): FFMpeg
     {
         return FFMpeg::create($config, $logger, $probe);
     }
