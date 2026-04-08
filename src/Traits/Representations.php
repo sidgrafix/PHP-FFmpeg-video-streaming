@@ -49,7 +49,7 @@ trait Representations
      * @param bool $acceding_order
      * @return $this
      */
-    public function autoGenerateRepresentations(array $sides = null, array $k_bitrate = null, bool $acceding_order = true)
+    public function autoGenerateRepresentations(?array $sides = null, ?array $k_bitrate = null, bool $acceding_order = true)
     {
         if (!$this->format) {
             throw new InvalidArgumentException('First you must set the format of the video');
