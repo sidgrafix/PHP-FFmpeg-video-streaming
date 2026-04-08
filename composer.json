@@ -1,6 +1,6 @@
 {
-    "name": "aminyazdanpanah/php-ffmpeg-video-streaming",
-    "description": "📼 PHP FFMpeg - Video Streaming - DASH, HLS http://video.aminyazdanpanah.com",
+    "name": "sidgrafix/php-ffmpeg-video-streaming",
+    "description": "PHP FFMpeg - Video Streaming - DASH, HLS",
     "type": "library",
     "keywords": [
         "dash",
@@ -29,13 +29,12 @@
         "key-rotation",
         "clearkey"
     ],
-    "homepage": "https://github.com/aminyazdanpanah/PHP-FFmpeg-video-streaming",
+    "homepage": "https://github.com/sidgrafix/PHP-FFmpeg-video-streaming",
     "license": "MIT",
     "authors": [
         {
-            "name": "Amin Yazdanpanah",
-            "email": "github@aminyazdanpanah.com",
-            "homepage": "https://www.aminyazdanpanah.com"
+            "name": "sidgrafix",
+            "email": "sidgrafix@developfx.com",
         }
     ],
     "minimum-stability": "dev",
@@ -62,8 +61,8 @@
         }
     },
     "require": {
-        "php": "^7.2 || ^8.0 || ^8.1 || ^8.2 || ^8.3 || ^8.4",
-        "php-ffmpeg/php-ffmpeg": "^0.15 || 0.16 || 0.17 || 0.18 || 0.19 || ^1.0  || ^1.1 || ^1.2 || ^1.3",
-        "symfony/filesystem": "4.0 || ^5.0 || ^6.0 || ^7.0 || ^8.0"
+        "php": "^8.3 || ^8.4",
+        "php-ffmpeg/php-ffmpeg": "0.19 || ^1.0  || ^1.1 || ^1.2 || ^1.3",
+        "symfony/filesystem": "^7.0 || ^8.0"
     }
 }
