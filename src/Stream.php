@@ -157,7 +157,7 @@ abstract class Stream implements StreamInterface
      * @param array $clouds
      * @return mixed
      */
-    public function save(string $path = null, array $clouds = []): Stream
+    public function save(?string $path = null, array $clouds = []): Stream
     {
         $this->paths($path, $clouds);
         $this->run();
@@ -188,7 +188,7 @@ abstract class Stream implements StreamInterface
      */
     public function __destruct()
     {
-        // make sure that FFmpeg process has benn terminated
+        // make sure that FFmpeg process has been terminated
         sleep(1);
         File::remove($this->tmp_dir);
 
