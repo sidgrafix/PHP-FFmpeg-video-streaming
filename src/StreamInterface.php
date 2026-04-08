@@ -38,7 +38,7 @@ interface StreamInterface
      * @param array $clouds
      * @return mixed
      */
-    public function save(string $path = null, array $clouds = []): Stream;
+    public function save(?string $path = null, array $clouds = []): Stream;
 
     /**
      * @param string $url
