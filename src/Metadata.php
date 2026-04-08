@@ -166,7 +166,7 @@ class Metadata
      * @param int $opts
      * @return string
      */
-    public function saveAsJson(string $filename = null, int $opts = null): string
+    public function saveAsJson(?string $filename = null, ?int $opts = null): string
     {
         if (is_null($filename)) {
             if ($this->stream->isTmpDir()) {
@@ -186,7 +186,7 @@ class Metadata
      * @param int|null $opts
      * @return array
      */
-    public function export(string $save_to = null, int $opts = null): array
+    public function export(?string $save_to = null, ?int $opts = null): array
     {
         return array_merge($this->get(), ['filename' => $this->saveAsJson($save_to, $opts)]);
     }
