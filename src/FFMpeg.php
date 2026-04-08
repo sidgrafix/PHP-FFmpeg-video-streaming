@@ -57,7 +57,7 @@ class FFMpeg
      * @param string|null $save_to
      * @return Media
      */
-    public function openFromCloud(array $cloud, string $save_to = null): Media
+    public function openFromCloud(array $cloud, ?string $save_to = null): Media
     {
         return call_user_func_array([$this, 'open'], Cloud::download($cloud, $save_to));
     }
@@ -69,7 +69,7 @@ class FFMpeg
      * @param bool $screen
      * @return Media
      */
-    public function capture(string $video, string $audio = null, array $options = [], $screen = false): Media
+    public function capture(string $video, ?string $audio = null, array $options = [], $screen = false): Media
     {
         list($path, $option) = (new Capture($video, $audio, $screen))->getOptions();
         return $this->customInput($path, array_merge($option, $options));
@@ -101,7 +101,7 @@ class FFMpeg
      * @param FFProbe|null $probe
      * @return FFMpeg
      */
-    public static function create(array $config = [], LoggerInterface $logger = null, FFProbe $probe = null)
+    public static function create(array $config = [], ?LoggerInterface $logger = null, ?FFProbe $probe = null)
     {
         return new static(BFFMpeg::create($config, $logger, $probe));
     }
