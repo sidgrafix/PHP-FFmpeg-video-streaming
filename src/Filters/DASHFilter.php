@@ -43,7 +43,7 @@ class DASHFilter extends FormatFilter
                 $streams,
                 Utiles::arrayToFFmpegOpt([
                     'map'       => 0,
-                    "s:v:$key"  => $rep->size2string(),
+                    "filter:v:$key" => "scale={$rep->getWidth()}:{$rep->getHeight()}:force_original_aspect_ratio=decrease,pad={$rep->getWidth()}:{$rep->getHeight()}:(ow-iw)/2:(oh-ih)/2",
                     "b:v:$key"  => $rep->getKiloBitrate() . "k"
                 ]),
                 $this->getAudioBitrate($rep, $key)
