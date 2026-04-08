@@ -22,6 +22,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
      * RepsCollection constructor.
      * @param array $representations
      */
+    #[\ReturnTypeWillChange]
     public function __construct(array $representations = [])
     {
         array_walk($representations, [$this, 'add']);
@@ -30,6 +31,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
     /**
      * @return null|Representation
      */
+    #[\ReturnTypeWillChange]
     public function first()
     {
         return reset($this->representations) ?: null;
@@ -38,6 +40,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
     /**
      * @return null|Representation
      */
+    #[\ReturnTypeWillChange]
     public function end()
     {
         return end($this->representations) ?: null;
@@ -47,6 +50,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
      * @param RepresentationInterface $representation
      * @return RepsCollection
      */
+    #[\ReturnTypeWillChange]
     public function add(RepresentationInterface $representation)
     {
         array_push($this->representations, $representation);
@@ -56,6 +60,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
     /**
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public function all(): array
     {
         return $this->representations;
@@ -64,6 +69,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
     /**
      * @return array
      */
+    #[\ReturnTypeWillChange]
     public function keys(): array
     {
         return array_keys($this->representations);
@@ -74,6 +80,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
      * @param null $default
      * @return Representation | mixed
      */
+    #[\ReturnTypeWillChange]
     public function get($key, $default = null)
     {
         return $this->representations[$key] ?? $default;
@@ -82,6 +89,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
     /**
      * @param callable $func
      */
+    #[\ReturnTypeWillChange]
     public function map(callable $func)
     {
         $this->representations = array_map($func, $this->representations);
@@ -90,6 +98,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
     /**
      * count of representations
      */
+    #[\ReturnTypeWillChange]
     public function count(): int
     {
         return count($this->representations);
@@ -98,6 +107,7 @@ class RepsCollection implements \Countable, \IteratorAggregate
     /**
      * {@inheritdoc}
      */
+    #[\ReturnTypeWillChange]
     public function getIterator(): \Traversable
     {
         return new \ArrayIterator($this->representations);
