@@ -108,7 +108,7 @@ class HLSFilter extends FormatFilter
             "hls_segment_type"          => $this->hls->getHlsSegmentType(),
             "hls_fmp4_init_filename"    => $this->getInitFilename($rep),
             "hls_segment_filename"      => $this->getSegmentFilename($rep),
-            "s:v"                       => $rep->size2string(),
+            "vf"                        => "scale={$rep->getWidth()}:{$rep->getHeight()}:force_original_aspect_ratio=decrease,pad={$rep->getWidth()}:{$rep->getHeight()}:(ow-iw)/2:(oh-ih)/2",
             "b:v"                       => $rep->getKiloBitrate() . "k"
         ];
 
